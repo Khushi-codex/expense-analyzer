@@ -4,13 +4,13 @@ import os
 def bar_chart(category_summary):
     plt.figure(figsize=(10, 5))
     category_summary.plot(kind='bar' , color='steelblue')
-    plt.title('Spending by Catefory')
+    plt.title('Spending by Category')
     plt.xlabel('Category')
     plt.ylabel('Amount (₹)')
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.savefig('charts/category_chart.png')
-    plt.show()
+    plt.close()
     print("Chart saved to charts/category_chart.png")
 
 def line_chart(monthly_summary):
@@ -21,6 +21,6 @@ def line_chart(monthly_summary):
     plt.ylabel('Amount (₹)')
     plt.tight_layout()
     plt.savefig('charts/monthly_chart.png')
-    plt.show()
+    plt.close()
     print("Chart saved to charts/monthly_chart.png")
 
