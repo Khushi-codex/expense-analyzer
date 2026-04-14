@@ -5,7 +5,8 @@ df = load_data('data/expenses.csv')
 
 total_spending(df)
 cat_summary = category_summary(df)
-lowest_category(df)
+
+lowest_category(cat_summary)
 mon_summary = monthly_summary(df)
 
 bar_chart(cat_summary)

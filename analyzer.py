@@ -18,10 +18,11 @@ def category_summary(df):
     print("\n Spending by Category:")
     print(summary)
     return summary
-def lowest_category(df):
+def lowest_category(summary):
     top = df.groupby('category')['amount'].sum().idxmin()
     amount = df.groupby('category')['amount'].sum().min()
     print(f"\n Lowest Spending: {top} → ₹{amount}")
+    return summary.idxmin()
 def total_spending(df):
     total = df['amount'].sum()
     print(f"\n Total spending: ₹{total}")

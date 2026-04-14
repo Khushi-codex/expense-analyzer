@@ -1,5 +1,6 @@
 import  matplotlib.pyplot as plt
 import os
+os.makedirs("charts", exist_ok=True)
 
 def bar_chart(category_summary):
     plt.figure(figsize=(10, 5))
