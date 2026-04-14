@@ -6,7 +6,7 @@ A Python project to analyze and visualize personal expenses.
 - Analyze spending by category and month
 - Interactive filters (category & month)
 - Visualizations (bar, line, pie charts)
-- Smart insights (auto-generated       spending summary)
+- Smart insights (auto-generated spending summary)
 
 ## App Preview
 
