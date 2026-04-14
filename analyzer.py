@@ -33,3 +33,23 @@ def monthly_summary(df):
     print("peak month:", monthly.idxmax())
     print(monthly)
     return monthly
+def generate_insights(df):
+    insights = []
+
+    total = df['amount'].sum()
+    top_cat = df.groupby('category')['amount'].sum().idxmax()
+
+    insights.append(f"Total spending is ₹{total}")
+    insights.append(f"You spent most on {top_cat}")
+
+    # Monthly trend
+    df['month'] = df['date'].dt.to_period('M')
+    monthly = df.groupby('month')['amount'].sum()
+
+    if len(monthly) > 1:
+        if monthly.iloc[-1] > monthly.iloc[-2]:
+            insights.append("Spending increased this month 📈")
+        else:
+            insights.append("Spending decreased this month 📉")
+
+    return insights

@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from analyzer import category_summary, monthly_summary, total_spending
+from analyzer import generate_insights
 
 st.set_page_config(page_title="Expense Analyzer", page_icon="💰")
 
@@ -58,6 +59,13 @@ if uploaded_file is not None:
     cat_data.plot(kind='pie', ax=ax, autopct='%1.1f%%')
     ax.set_ylabel('')
     st.pyplot(fig)
+
+    st.markdown("---")
+    st.subheader("🧠 Smart Insights")
+    
+    insights = generate_insights(filtered_df)
+    for insight in insights:
+        st.write("•", insight)
 
 else:
     st.info("Please upload a CSV file to begin.")
