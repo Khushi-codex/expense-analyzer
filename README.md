@@ -1,4 +1,5 @@
 # Personal Expense Analyzer
+A Python project to analyze and visualize personal expenses.
 
 ## Features
 - Load CSV expense data
